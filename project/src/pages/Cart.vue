@@ -1,6 +1,6 @@
 <template>
-    <div>
-        Cart购物车
+    <div class="cart">
+                
     </div>
 
 

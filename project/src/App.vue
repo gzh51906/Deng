@@ -12,12 +12,12 @@
           @select="changeActive"
         >
           <el-menu-item :index="item.path" v-for="item in menu" :key="item.name" class="z_list">
-            <i></i>
-            {{item.text}}
-          </el-menu-item>
-        </el-menu>
-      </el-col>
-    </el-row>
+              <i></i>
+              {{item.text}}
+            </el-menu-item>
+          </el-menu>
+        </el-col>
+      </el-row>
     </div>
     
   </div>
@@ -80,6 +80,7 @@ export default {
     height: 100%;
     display: flex;
     background: #eee;
+    flex-direction: column;
   }
   .z_nav{
     width: 100%;
@@ -87,6 +88,8 @@ export default {
     position:fixed;
     bottom:0;
     background:#fff;
+    z-index:200;
+    border-top:1px solid #e9e9e9;
   }
   .z_nav_el{
     height: 50px;
@@ -102,5 +105,11 @@ export default {
   .z_list{
     text-align: center;
     flex:1;
+  }
+  .z-category{
+      width: 300px;
+  }
+  #app>div:nth-of-type(1){
+    width:100%;
   }
 </style>

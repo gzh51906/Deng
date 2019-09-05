@@ -1,5 +1,6 @@
 
 import Vue from 'vue'
+import axios from 'axios';
 
 import Home from '../pages/Home.vue'
 import Category from '../pages/Category.vue'
@@ -17,6 +18,7 @@ Vue.use(VueRouter)
 
 //实例化路由
 let router = new VueRouter({
+    mode:'history',
     routes:[{
         name:'home',
         component:Home,
