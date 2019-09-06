@@ -80,8 +80,8 @@ exports.update = async (colName,query,data)=>{
 
     //  针对id进行处理
     // '5d5667d8f174c9ca8ea897d8' -> ObjectId("5d5667d8f174c9ca8ea897d8")
-    if(query._id){
-        query._id = ObjectId(query._id);
+    if(query.gsortname){
+        query.gsortname = ObjectId(query.gsortname);
     }
 
     let result = collection.find(query);

@@ -30,7 +30,7 @@ let router = new VueRouter({
     },{
         name:'goods',
         component:Goods,
-        path:"/goods"
+        path:"/goods/:id"
     },{
         name:'mine',
         component:Mine,
