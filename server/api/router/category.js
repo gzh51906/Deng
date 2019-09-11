@@ -5,10 +5,7 @@ const Router = express.Router();
 const {find} = require('../db/mongo');
 const {formatData} = require('../utils')
 
-Router.get('/xxx',(req,res)=>{
-    
-    res.send(123)
-})
+
 
 // 查（获取所有用户）：get /user
 Router.get('/',async (req,res)=>{

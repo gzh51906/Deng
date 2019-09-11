@@ -9,6 +9,8 @@ const Router = express.Router();
 // const userRouter = require('./user');
 const categoryRouter = require('./category');
 const goodsRouter = require('./goods');
+const cartRouter = require('./cart');
+const userRouter = require('./user');
 
 
 
@@ -28,6 +30,8 @@ Router.use((req,res,next)=>{
 })
 Router.use('/category',categoryRouter);
 Router.use('/goods',goodsRouter);
+Router.use('/cart',cartRouter);
+Router.use('/user', userRouter);
 
 // 商品
 // Router.use('/goods',goodsRouter);

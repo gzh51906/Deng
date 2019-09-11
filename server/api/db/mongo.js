@@ -78,10 +78,11 @@ exports.update = async (colName,query,data)=>{
      //  获取集合
      let collection = db.collection(colName);
 
+     
     //  针对id进行处理
     // '5d5667d8f174c9ca8ea897d8' -> ObjectId("5d5667d8f174c9ca8ea897d8")
-    if(query.gsortname){
-        query.gsortname = ObjectId(query.gsortname);
+    if(query._id){
+        query._id = ObjectId(query._id);
     }
 
     let result = collection.find(query);
@@ -109,3 +110,4 @@ exports.update = async (colName,query,data)=>{
     // 要得到data，必须then或者await
      return data;
 }
+

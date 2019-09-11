@@ -9,6 +9,7 @@ import Login from '../pages/Login.vue'
 import Mine from '../pages/Mine.vue'
 import Cart from '../pages/Cart.vue'
 import Goods from '../pages/Goods.vue'
+import Info from '../pages/Info.vue'
 
 //引入路由
 import VueRouter from  'vue-router'
@@ -47,6 +48,10 @@ let router = new VueRouter({
         name:'reg',
         component:Reg,
         path:"/reg"
+    },{
+        name:'info',
+        component:Info,
+        path:"/info/:id"
     }]
 
 })

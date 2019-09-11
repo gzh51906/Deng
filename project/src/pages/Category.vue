@@ -9,7 +9,7 @@
         </div>    
 
         <div class="z-cate-list">
-            <el-tabs :tab-position="tabPosition" >
+            <el-tabs :tab-position="tabPosition" class="etabs" >
                 <el-tab-pane label="类型" >
                     <div class="z-box-content">
                         <div class="cat-top">全部类型</div>
@@ -40,7 +40,7 @@
                         <div class="cat-content">
                             <el-row :gutter="8">
                                 <el-col :span="8" v-for="item in catlist[2].list" :key="item.attrid">
-                                    <div class="grid-content bg-purple z-type-item"> <img :src="item.attrimage" class="z-type-img" style="width:37px;height:37px;"><span>{{item.attrname}}</span></div>
+                                    <div class="grid-content bg-purple z-type-item" @click="goto(item.attrid)"> <img :src="item.attrimage" class="z-type-img" style="width:37px;height:37px;"><span>{{item.attrname}}</span></div>
                                 </el-col>
                             </el-row>
                         </div>
@@ -54,7 +54,7 @@
                                 <el-col :span="24" v-for="item in catlist[3].list" :key="item.attrid">
                                     <div class="brand-title">{{item.key}}</div>
                                     <div class="grid-content bg-purple z-brand-item">
-                                        <a href="###" v-for="ele in item.list" :key="ele.gbid">
+                                        <a v-for="ele in item.list" :key="ele.gbid" @click="getbrand(ele.gbname)">
                                             <img :src="ele.gbimage" alt="">
                                             <span>{{ele.gbname}}</span>
                                         </a>
@@ -94,7 +94,7 @@
                         <div class="cat-content">
                             <el-row :gutter="8">
                                 <el-col :span="8" v-for="item in catlist[5].list" :key="item.attrid">
-                                    <div class="grid-content bg-purple z-type-item"> <img :src="item.attrimage" class="z-type-img" style="width:37px;height:37px;"><span>{{item.attrname}}</span></div>
+                                    <div class="grid-content bg-purple z-type-item" @click="goto(item.attrid)"> <img :src="item.attrimage" class="z-type-img" style="width:37px;height:37px;"><span>{{item.attrname}}</span></div>
                                 </el-col>
                             </el-row>
                         </div>
@@ -120,10 +120,13 @@
         methods:{
             goto(id){
                 this.$router.push({name:'goods',params:{id}})
+            },
+            getbrand(id){
+                this.$router.push({name:'goods',params:{id}})
             }
         },
         async created(){
-            let {data} = await this.$axios.get('http://localhost:2000/category')
+            let {data} = await this.$axios.get('http://120.24.156.103:2000/category')
             
             this.catlist = data.data
             console.log(this.catlist)
@@ -171,7 +174,7 @@
         padding:0 10px;
         color:orangered;
     }
-    .el-tabs{
+    .etabs{
         height: 100%;
         background: #e5e5e5;
         /* overflow: scroll;  */

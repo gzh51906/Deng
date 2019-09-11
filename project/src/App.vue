@@ -30,7 +30,7 @@
   import "element-ui/lib/theme-chalk/index.css";
 
 export default {
-  name: 'app',
+  
   data() {
     return {
       active: "/home",
@@ -66,6 +66,9 @@ export default {
       console.log(index, path);
       this.active = index;
     }
+  },
+  created(){
+    this.active = this.$route.path;
   }
 }
 </script>
@@ -111,5 +114,14 @@ export default {
   }
   #app>div:nth-of-type(1){
     width:100%;
+  }
+  .el-tabs__header{
+      margin-bottom:0 !important;
+  }
+  .el-tabs__content{
+    padding:0 !important;
+  }
+  .el-carousel__container{
+      height: 375px !important;
   }
 </style>
